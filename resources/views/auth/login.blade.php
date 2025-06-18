@@ -4,9 +4,9 @@
 <main class="login-form">
 
 <img src="/image/pln.png" alt="logo-pln" j width="50px">
-    <div class="container">
+    <div class="container" >
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header text-center">Login</div>
                     <div class="card-body">
