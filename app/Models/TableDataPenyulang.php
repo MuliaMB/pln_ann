@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class TableDataPenyulang extends Model
+{
+    protected $table = 'table_data_penyulangs';
+
+    protected $fillable = [
+        'id_penyulang', 'bulan', 'tahun',
+        'amp_siang', 'teg_siang', 'mw_siang', 'persen_siang',
+        'amp_malam', 'teg_malam', 'mw_malam', 'persen_malam',
+    ];
+
+    public function penyulang()
+    {
+        return $this->belongsTo(Penyulang::class, 'id_penyulang');
+    }
+}
