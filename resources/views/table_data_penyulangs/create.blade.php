@@ -1,4 +1,4 @@
-@extends('table_data_penyulangs.layout')
+@extends('layouts.main')
 
 @section('content')
 <div class="container">

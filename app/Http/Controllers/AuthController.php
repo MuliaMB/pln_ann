@@ -98,4 +98,13 @@ class AuthController extends Controller
 
         return redirect('login');
     }
+
+    // public fuction abc()
+    // {
+    //     return view ('layouts.main');
+    // }
+
+    public function abc(){
+        return view ('layouts.main');
+    }
 }
