@@ -5,23 +5,29 @@
     <h2>Tambah Penyulang</h2>
 
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Oops!</strong> Ada kesalahan input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <strong>Oops!</strong> Ada kesalahan input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <form action="{{ route('penyulangs.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
-            <label>ID Trafo Daya:</label>
-            <input type="number" name="id_trafo_daya" class="form-control" required>
+            <label for="id_trafo_daya" class="form-label">ID Trafo Daya:</label>
+            <select name="id_trafo_daya" id="id_trafo_daya" class="form-control" required>
+                <option value="">-- Pilih Trafo Daya --</option>
+                @foreach($trafos as $trafo)
+                <option value="{{ $trafo->id }}">{{ $trafo->id }} - {{ $trafo->nama ?? 'Tanpa Nama' }}</option>
+                @endforeach
+            </select>
         </div>
+
 
         <div class="mb-3">
             <label>Nama:</label>

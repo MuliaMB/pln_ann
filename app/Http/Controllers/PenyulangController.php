@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penyulang;
+use App\Models\TrafoDaya;
 use Illuminate\Http\Request;
 
 class PenyulangController extends Controller
@@ -15,7 +16,8 @@ class PenyulangController extends Controller
 
     public function create()
     {
-        return view('penyulangs.create');
+        $trafos = TrafoDaya::all();
+        return view('penyulangs.create',compact('trafos'));
     }
 
     public function store(Request $request)

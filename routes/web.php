@@ -9,6 +9,7 @@ use App\Http\Controllers\TrafoDayaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PredictController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,7 @@ Route::get('dashboard', [AuthController::class,'dashboard']);
 Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::get('abc', [AuthController::class,'abc'])->name('abc');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/prediction', [PredictController::class, 'showPredictionForm'])->name('prediction.form');
+Route::post('/predict', [PredictController::class, 'predict'])->name('predict');
+Route::get('/test-api', [PredictController::class, 'testApiConnection']);
