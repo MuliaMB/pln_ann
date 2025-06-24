@@ -40,7 +40,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('abc')
                 ->withSuccess('You have successfully logged in');
         }
 
@@ -61,7 +61,7 @@ class AuthController extends Controller
         $data = $request->all();
         $this->create($data);
 
-        return redirect("dashboard")->withSuccess('Great! You have successfully registered and logged in');
+        return redirect("login")->withSuccess('Great! You have successfully registered');
     }
 
     /**

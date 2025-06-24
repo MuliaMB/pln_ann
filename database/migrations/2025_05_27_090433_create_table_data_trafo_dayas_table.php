@@ -17,14 +17,14 @@ return new class extends Migration
             $table->integer('bulan');
             $table->integer('tahun');
             //siang 
-            $table->integer('amp_siang');
-            $table->integer('teg_siang');
-            $table->integer('mw_siang');
+            $table->float('amp_siang');
+            $table->float('teg_siang');
+            $table->float('mw_siang');
             $table->float('persen_siang');
             // malam
-            $table->integer('amp_malam');
-            $table->integer('teg_malam');
-            $table->integer('mw_malam');
+            $table->float('amp_malam');
+            $table->float('teg_malam');
+            $table->float('mw_malam');
             $table->float('persen_malam');
 
             $table->timestamps();

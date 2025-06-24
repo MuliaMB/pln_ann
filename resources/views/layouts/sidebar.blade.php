@@ -7,9 +7,20 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        
                         <li>
                             <a title="Landing Page" href="{{ route('penyulangs.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Penyulang</span></a>
+                        </li>
+                        <li>
+                            <a title="Landing Page" href="{{ route('trafo_dayas.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Trafo Daya</span></a>
+                        </li>
+                        <li>
+                            <a title="Landing Page" href="{{ route('gardu_induks.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">gardu induk</span></a>
+                        </li>
+                        <li>
+                            <a title="Landing Page" href="{{ route('table_data_trafo_dayas.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">data trafo daya</span></a>
+                        </li>
+                        <li>
+                            <a title="Landing Page" href="{{ route('table_data_penyulangs.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">data penyulang</span></a>
                         </li>
                     </ul>
                 </nav>

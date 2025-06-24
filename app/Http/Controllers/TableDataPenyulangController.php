@@ -25,6 +25,7 @@ class TableDataPenyulangController extends Controller
     // Simpan data baru
     public function store(Request $request)
     {
+        // dd($request->all());
         $validated = $request->validate([
             'id_penyulang' => 'required|exists:penyulangs,id',
             'bulan' => 'required|integer|min:1|max:12',

@@ -1,4 +1,4 @@
-@extends('trafo_dayas.layout')
+@extends('layouts.main')
 
 @section('content')
 <div class="container">

@@ -8,6 +8,7 @@ use App\Http\Controllers\TableDataTrafoDayaController;
 use App\Http\Controllers\TrafoDayaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,3 +26,4 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class,'dashboard']);
 Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::get('abc', [AuthController::class,'abc'])->name('abc');
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');

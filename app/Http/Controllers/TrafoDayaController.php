@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GarduInduk;
 use App\Models\TrafoDaya;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class TrafoDayaController extends Controller
 
     public function create()
     {
-        return view('trafo_dayas.create');
+        $gardu_induk = GarduInduk::all();
+        return view('trafo_dayas.create', compact('gardu_induk'));
     }
 
     public function store(Request $request)
@@ -39,7 +41,8 @@ class TrafoDayaController extends Controller
 
     public function edit(TrafoDaya $trafo_daya)
     {
-        return view('trafo_dayas.edit', compact('trafo_daya'));
+        $gardu_induks = GarduInduk::all();
+        return view('trafo_dayas.edit', compact('trafo_daya', 'gardu_induk'));
     }
 
     public function update(Request $request, TrafoDaya $trafo_daya)
