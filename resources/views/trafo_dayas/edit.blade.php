@@ -23,7 +23,7 @@
             <label for="id_gardu_induk" class="form-label">ID Gardu Induk:</label>
             <select name="id_gardu_induk" id="id_gardu_induk" class="form-control" required>
                 <option value="">-- Pilih Gardu Induk --</option>
-                @foreach($gardu_induk as $gi)
+                @foreach($gardu_induks as $gi)
                 <option value="{{ $gi->id }}">{{ $gi->nama }}</option>
                 @endforeach
             </select>

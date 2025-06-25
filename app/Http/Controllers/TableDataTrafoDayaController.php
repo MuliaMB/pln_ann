@@ -22,18 +22,19 @@ class TableDataTrafoDayaController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'id_trafo_daya' => 'required|exists:trafo_dayas,id',
-            'bulan' => 'required|integer',
-            'tahun' => 'required|integer',
-            'amp_siang' => 'required|integer',
-            'teg_siang' => 'required|integer',
-            'mw_siang' => 'required|integer',
-            'persen_siang' => 'required|numeric',
-            'amp_malam' => 'required|integer',
-            'teg_malam' => 'required|integer',
-            'mw_malam' => 'required|integer',
-            'persen_malam' => 'required|numeric',
+            'bulan' => 'required',
+            'tahun' => 'required',
+            'amp_siang' => 'required',
+            'teg_siang' => 'required',
+            'mw_siang' => 'required',
+            'persen_siang' => 'required',
+            'amp_malam' => 'required',
+            'teg_malam' => 'required',
+            'mw_malam' => 'required',
+            'persen_malam' => 'required',
         ]);
 
         TableDataTrafoDaya::create($request->all());

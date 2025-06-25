@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Prediction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -79,7 +81,11 @@ class PredictController extends Controller
                     'data_timestamp' => $latestData->created_at,
                     'gardu_induk_id' => $garduIndukId,
                 ];
-
+                $predict = Prediction::create([
+                    'nama_gardu_induk' => $apiData['gardu_induk'],
+                    'prediksi_mw_siang' => $prediction['prediksi_mw_siang'],
+                    'prediksi_mw_malam' => $prediction['prediksi_mw_malam']
+                ]);
                 return view('prediction_result', compact('garduInduk', 'prediction', 'apiData', 'additionalInfo'));
             } else {
                 $errorMessage = 'API request failed. ';
@@ -98,5 +104,36 @@ class PredictController extends Controller
             Log::error('Prediction error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
         }
+    }
+
+    public function grafik_data(Request $request)
+    {
+        // $month = $request->month;
+        $sixMonthsAgo = Carbon::now()->subMonths(12);
+
+        // Ambil semua nama gardu untuk dropdown
+        $garduIndukList = DB::table('predictions')
+            ->select('nama_gardu_induk')
+            ->distinct()
+            ->pluck('nama_gardu_induk');
+
+        // Ambil nama gardu yang difilter
+        $selectedGardu = $request->query('gardu');
+
+        $query = DB::table('predictions')
+            ->select('nama_gardu_induk', 'prediksi_mw_siang', 'prediksi_mw_malam', 'created_at')
+            ->where('created_at', '>=', $sixMonthsAgo);
+
+        if ($selectedGardu) {
+            $query->where('nama_gardu_induk', $selectedGardu);
+        }
+
+        $data = $query->orderBy('created_at')->get();
+
+        return view('grafik', [
+            'data' => $data,
+            'garduIndukList' => $garduIndukList,
+            'selectedGardu' => $selectedGardu
+        ]);
     }
 }

@@ -28,7 +28,9 @@ Route::get('dashboard', [AuthController::class,'dashboard']);
 Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::get('abc', [AuthController::class,'abc'])->name('abc');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+// api
 Route::get('/prediction', [PredictController::class, 'showPredictionForm'])->name('prediction.form');
 Route::post('/predict', [PredictController::class, 'predict'])->name('predict');
 Route::get('/test-api', [PredictController::class, 'testApiConnection']);
+
+Route::get('/grafik-data', [PredictController::class, 'grafik_data']);

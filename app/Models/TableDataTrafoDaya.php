@@ -12,19 +12,21 @@ class TableDataTrafoDaya extends Model
 
     protected $table = 'table_data_trafo_dayas';
 
-    protected $fillable = [
-        'id_trafo_daya',
-        'bulan',
-        'tahun',
-        'amp_siang',
-        'teg_siang',
-        'mw_siang',
-        'persen_siang',
-        'amp_malam',
-        'teg_malam',
-        'mw_malam',
-        'persen_malam',
-    ];
+    // protected $fillable = [
+    //     'id_trafo_daya',
+    //     'bulan',
+    //     'tahun',
+    //     'amp_siang',
+    //     'teg_siang',
+    //     'mw_siang',
+    //     'persen_siang',
+    //     'amp_malam',
+    //     'teg_malam',
+    //     'mw_malam',
+    //     'persen_malam',
+    // ];
+
+    protected $guarded = ['id'];
 
     public function trafoDaya()
     {

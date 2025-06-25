@@ -42,7 +42,7 @@ class TrafoDayaController extends Controller
     public function edit(TrafoDaya $trafo_daya)
     {
         $gardu_induks = GarduInduk::all();
-        return view('trafo_dayas.edit', compact('trafo_daya', 'gardu_induk'));
+        return view('trafo_dayas.edit', compact('trafo_daya', 'gardu_induks'));
     }
 
     public function update(Request $request, TrafoDaya $trafo_daya)
