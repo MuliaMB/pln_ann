@@ -30,7 +30,7 @@
         </div>
 
         <div class="mb-3">
-            <label>Nama:</label>
+            <label>Trafo Daya:</label>
             <input type="text" name="nama" value="{{ $trafo_daya->nama }}" class="form-control" required>
         </div>
 

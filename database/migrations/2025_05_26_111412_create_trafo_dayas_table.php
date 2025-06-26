@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trafo_dayas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_gardu_induk');
+            $table->foreignId('id_gardu_induk')->constrained('gardu_induks')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('nama');
             $table->string('kap');
             $table->string('setting_rele');

@@ -20,4 +20,8 @@ class TrafoDaya extends Model
     {
         return $this->hasMany(Penyulang::class, 'id_trafo_daya');
     }
+
+    public function gardu(){
+        return $this->hasOne(GarduInduk::class,'id','id_gardu_induk');
+    }
 }

@@ -22,6 +22,7 @@ class TrafoDayaController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'id_gardu_induk' => 'required',
             'nama' => 'required',

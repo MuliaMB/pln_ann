@@ -11,4 +11,8 @@ class Penyulang extends Model
 
     protected $table = 'penyulangs';
     protected $guarded = ['id'];
+
+    public function trafo(){
+        return $this->hasOne(TrafoDaya::class,'id','id_trafo_daya');
+    }
 }

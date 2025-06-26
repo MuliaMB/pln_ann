@@ -29,7 +29,7 @@
         </div>
 
         <div class="mb-3">
-            <label>Nama:</label>
+            <label>Nama Trafo Daya:</label>
             <input type="text" name="nama" class="form-control" required>
         </div>
 

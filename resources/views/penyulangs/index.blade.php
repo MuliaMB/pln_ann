@@ -14,8 +14,9 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>Gardu</th>
                 <th>ID Trafo Daya</th>
-                <th>Nama</th>
+                <th>Penyulang</th>
                 <th>Setting Rele</th>
                 <th>Aksi</th>
             </tr>
@@ -24,7 +25,8 @@
             @foreach ($penyulangs as $penyulang)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $penyulang->id_trafo_daya }}</td>
+                    <td>{{ $penyulang->trafo?->gardu?->nama }}</td>
+                    <td>{{ $penyulang->trafo?->nama }}</td>
                     <td>{{ $penyulang->nama }}</td>
                     <td>{{ $penyulang->setting_rele }}</td>
                     <td>

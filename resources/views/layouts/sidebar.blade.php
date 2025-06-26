@@ -7,21 +7,14 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li>
-                            <a title="Landing Page" href="{{ route('penyulangs.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Penyulang</span></a>
-                        </li>
-                        <li>
-                            <a title="Landing Page" href="{{ route('trafo_dayas.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Trafo Daya</span></a>
-                        </li>
-                        <li>
-                            <a title="Landing Page" href="{{ route('gardu_induks.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">gardu induk</span></a>
-                        </li>
-                        <li>
-                            <a title="Landing Page" href="{{ route('table_data_trafo_dayas.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">data trafo daya</span></a>
-                        </li>
-                        <li>
-                            <a title="Landing Page" href="{{ route('table_data_penyulangs.index')}}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">data penyulang</span></a>
-                        </li>
+                        <a class="nav-link" href="{{ route('gardu_induks.index') }}">🏭 <span>Gardu Induk</span></a>
+                        <a class="nav-link" href="{{ route('trafo_dayas.index') }}">⚡ <span>Trafo Daya</span></a>
+                        <a class="nav-link" href="{{ route('penyulangs.index') }}">🔌 <span>Penyulang</span></a>
+<!--                         
+                        <a class="nav-link" href="{{ route('table_data_trafo_dayas.index') }}">📈 <span>Data Trafo Daya</span></a>
+                         -->
+                        <a class="nav-link" href="{{ route('table_data_penyulangs.index') }}">📉 <span>Data Penyulang</span></a>
+                        <a class="nav-link" href="{{ route('prediction.form') }}">🔮 <span>Prediksi Beban</span></a>
                     </ul>
                 </nav>
             </div>

@@ -13,7 +13,8 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Nama</th>
+            <th>Gardu Induk</th>
+            <th>Nama Trafo Daya</th>
             <th>Kapasitas</th>
             <th>Setting Rele</th>
             <th>Aksi</th>
@@ -21,6 +22,7 @@
         @foreach ($trafodayas as $i => $trafo)
         <tr>
             <td>{{ $i + 1 }}</td>
+            <td>{{ $trafo->gardu?->nama }}</td>
             <td>{{ $trafo->nama }}</td>
             <td>{{ $trafo->kap }}</td>
             <td>{{ $trafo->setting_rele }}</td>
